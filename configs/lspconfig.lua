@@ -8,6 +8,10 @@ local servers = {
   "pyright",
   "tsserver",
   "jsonls",
+  "rust_analyzer",
+  "clangd",
+  "gopls",
+  "astro-language-server",
 }
 
 for _, lsp in ipairs(servers) do
@@ -28,4 +32,15 @@ configs.solidity = {
   },
 }
 
+configs.noir = {
+  default_config = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "nargo", "lsp", "--show-output" },
+    filetypes = { "noir", "nr" },
+    root_dir = lspconfig.util.find_git_ancestor,
+  },
+}
+
 lspconfig.solidity.setup {}
+lspconfig.noir.setup {}

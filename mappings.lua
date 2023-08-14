@@ -21,6 +21,10 @@ M.personal = {
       "<cmd>EthHvr<CR>",
       "Convert wei to ETH",
       opts = { nowait = true }
+    },
+    ['<F12>b'] = {
+      ":exe ':silent !brave-browser %'<CR>",
+      "Open current file in Brave"
     }
   }
 }

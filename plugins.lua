@@ -5,6 +5,9 @@ local plugins = {
     lazy = false
   },
   {
+    "tpope/vim-fugitive"
+  },
+  {
     "neovim/nvim-lspconfig",
     
      dependencies = {
